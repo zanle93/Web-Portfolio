@@ -1,98 +1,215 @@
-body{
-   font-family:  "Helvetica Neue","Arial","sans-serif"; 
-}
-*{
-    padding: 0px;
-    margin: 0px;
-}
-#navdiv {
-    margin-top: 50px;
-    background: orange;
-}
-#navdiv ul{
+body {
+    margin:0; /*gets rid of white space around body*/
+    margin-top:16px;
+    height:150vh; /*you can let your content define it's height*/
+    position:relative; /*REQUIRED Sets up positioning for your footer*/
+  }
+header {
     width: 100%;
-    height: 80px;
-    line-height: 80px;
-    color: black;
-    /* background: red; */
+    height: 50px;
+    /* background: palevioletred; */
+    padding-top: 0;
+    margin-top: 50px;
 }
-#navdiv ul a{
-    text-decoration: none;
-    color: black;
-    padding: 20px;
-    /* background: blue; */
-}
-#navdiv ul li {
-    list-style-type: none;
-    display: inline-block;
-    float:right; 
+/* #title {
+    font-size: 20px;
+    color: #A9A9A9;
+    margin-top: -10px;
+    margin-left: 10%;
+    background-color: goldenrod;
+} */
+#logo {
+    float: left;
+    /* background: mediumblue; */
+    margin:0;
     letter-spacing: 3px;
+    margin-left: 10%;
+    margin-top: 5px;
+    font-family: Futura PT Medium;
+    color: #2f3036;
+    /* background-color: aquamarine; */
+}
+/*Strip the ul of padding and list styling*/
+ul {
+    list-style-type:none;
+    margin:0;
+    margin-right: 10%;
+    padding:0;
+    /* background-color: aqua; */
+    float: right;
+    /* position: absolute; */
+}
+/*Create a horizontal list with spacing*/
+li {
+    display:inline-block;
+  
+    /* margin-right: 1px; */
+}
+/*Style for menu links*/
+li a {
+    display:block;
+    min-width:100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #2f3036;
     font-size: 16px;
+    /* background: #2f3036; */
+    text-decoration: none;
 }
-.secnav  {
-    margin-right: 20%;
+/*Hover state for top level links*/
+li:hover a {
+    background: #19c589;
 }
-/* #navdiv ul li:hover{
-    background: #aec6cf; 
-    transition: all 0.40s;
-}  */
-#navdiv ul p {
-    width: 300px;
-    float: left; 
-    cursor: pointer;
-    margin-left: 20%;
-    font-size: 36px;
-    font-family: futura-pt; 
-    font-weight: 500;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    background: olivedrab;
-}
-img {
-    width: 300px;
-    height:auto;
-}
-.content {
-    /* background: pink; */
+/*Style for dropdown links*/
+li:hover ul a {
+    background: #f3f3f3;
+    color: #2f3036;
+    height: 40px;
     line-height: 40px;
-    margin-left: 20%;
 }
-img     {
-float: left;
-margin-right: 50px;
+/*Hover state for dropdown links*/
+li:hover ul a:hover {
+    background: #19c589;
+    color: #fff;
+}
+/*Hide dropdown links until they are needed*/
+li ul {
+    display: none;
+}
+/*Make dropdown links vertical*/
+li ul li {
+    display: block;
+    float: none;
+}
+/*Prevent text wrapping*/
+li ul li a {
+    width: auto;
+    min-width: 100px;
+    padding: 0 20px;
+}
+/*Display the dropdown on hover*/
+ul li a:hover + .hidden, .hidden:hover {
+    display: block;
+}
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: #fff;
+    background: #19c589;
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+}
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
 }
 .bio {
-    /* background: mediumvioletred; */
-    margin-top: 70px;
-    font-size: 13px;
+    width: 100%;
+    margin: 0;
+    margin-top: 40px;
+    /* background: red; */
 }
-h2 {
-    font-family: "futura-pt";
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 28px;
-    text-transform: capitalize;
+img {
+    width: 20%;
+    height: auto;
+    float: left;
+    margin: 0px 0px 10px 10%;
+}
+.content {
+    float: left;
+    /* background: powderblue; */
+    width: 60%;
+    padding-left: 50px;
+
 }
 
-@media screen and (max-width: 768px) {
-    .secnav {
-        float: none;
-        clear: left;
-        width: 100%;
-        margin: 0;
-        padding:0;
+/*Responsive Styles*/
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    /*Make dropdown links appear inline*/
+    ul {
+        position: static;
+        display: none;
     }
- .navdiv ul p {
-     margin: 10px auto 0;
-     float: none;
-     text-align: center;
- }
- .navdiv ul .secnav li {
-     margin: 10px 0;
-     width: 20%;
-     padding:0;
-     text-align: center;
- }
+    /*Create vertical spacing*/
+    li {
+        margin-bottom: 1px;
+    }
+    /*Make all menu links full width*/
+    ul li, li a {
+        width: 100%;
+    }
+    /*Display 'show menu' link*/
+    .show-menu {
+        display:block;
+    }
+    #logo{
+        float: none;
+        margin: 0 auto;
+        text-align: center;
+    }
+footer {
+    font-size: 0.5em;
+}
+img {
+    width: 80%;
+}
+.content {
+    width: 80%;
+}
+}
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    #logo{
+        float: none;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+  header  ul {
+        float: none;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+ #sticky {
+      font-size: 5px;
+    }
+    
+
+}
+#sticky {
+    width:100%;
+    height:44px;
+    padding-top:20px;
+    /* background:red; */
+    color:white;
+    font-weight:bold;
+    font-size:24px;
+    text-align:center;
+    position:absolute; /*Here's what sticks it*/
+    bottom:0;          /*to the bottom of the body/page*/
+    left:0;       }     /*and to the left of the body/page.*/
+
+#sticky ul {
+    margin-right: 10%;
+        
+    }
+#sticky ul li {
+    margin: 0 10px;
+    font-size: 1.5em; 
+    color: #1f1e2e;
 }

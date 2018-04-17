@@ -1,40 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Van H. Le</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Van H. Le</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    
+        <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
-    <div id="navdiv">
-      <ul>
-        <p> Van H. Le </p>
-        <div class="secnav">
-            <li><a href="#">about</a></li>
-            <li><a href="#">places</a></li>
+    <label for="show-menu" class="show-menu">Menu</label>
+    <input type="checkbox" id="show-menu" role="button">
+    <header>
+            <h1 id="logo">VAN H. LE</h1> 
+                <ul id="menu">
+                    <li><a href="#">latest</a></li>
+                    <li>
+                        <a href="#">portfolio</a>
+                        <ul class="hidden">
+                            <li><a href="#">which which</a></li>
+                            <li><a href="#">sole food</a></li>
+                        </ul>
+            </li>
+            <li>
+                <a href="#">places</a>
+                <ul class="hidden">
+                    <li><a href="#">alaska</a></li>
+                    <li><a href="#">lake tahoe</a></li>
+                    <li><a href="#">yosemite</a></li>
+                </ul>
+            </li>
             <li><a href="#">food</a></li>
-            <li><a href="#">projects</a></li>
-            <li><a href="#">latest</a></li>
+            <li><a href="#">about</a></li>
+        </ul>
+    </header>
+    <!-- <p id="title">ui/ux designer</p> -->
+    <div class="bio">
+            <img src="Van.JPG" alt="Van">
+            <div class="content">
+                <h3>Van H. Le</h3>
+                <p> born and raised in Saigon, Vietnam.</p>
+                <p> to challenge and be challenged in a UI/UX position</p>
+                <p> occasionally travels, writes and takes pictures</p>
+                <p> interested in human psychology, graphic design, and marketing</p>
+                <p> can be reached at vanle@outlook.com</p>
+            </div>
         </div>
-        <!-- <h4 id="title">ui/ux designer</h4> -->
-     </ul>
-    </div>
-  
-    <div class="content">
-<img src="Van.JPG" alt="Van">
-<div class="bio">
-  <h2>Van H. Le</h2>
-  <p>born and raised in Saigon, Vietnam.</p>
-  <p>challenge and to be challenged in an UI/UX position.</p>
-  <p>interested in Human Behavior, Animation, Illustration, and Marketing.</p>
-  <p>occasionally travels, writes, and takes photo.</p>
-  <p>can be reached at vanle@outlook.com</p>
-</div>
-    </div>
+    <footer id="sticky">
+                    <ul>
+                           <li><i class="fab fa-behance"></i></li>
+                           <li><i class="fab fa-github-alt"></i></li>
+                           <li><i class="fab fa-dribbble"></i></li>
+                           <li><i class="far fa-envelope"></i></li>
+                    </ul>
+    </footer>
 </body>
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="menu.js"></script>
 </html>
